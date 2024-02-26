@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    <input type="number" id="A">
+    <input type="number" id="B">
+    <button onclick="inTuAtoiB()">Play</button>
+    <script>
+        //In 1000 dong hello ra man hinh for loop
+        function in1000Dong(){
+            for(let i = 0; i <= 1000; i++){
+                document.write('Hello ');
+            }
+        }
+
+        //while loop
+        function in1000DongWhileLoop(){
+            let i = 0;
+            while(i<=1000){
+                document.write(i + "<br>");
+                i++;
+            }
+        }
+
+        let inputA = +prompt("Nhap A");
+        let inputB = +prompt("Nhap B");
+
+        while(inputA<=inputB){
+            if(inputA%2==0){
+                document.write(inputA + "<br>");
+            }
+            inputA++;
+        }
+
+
+    </script>
+</body>
+</html>

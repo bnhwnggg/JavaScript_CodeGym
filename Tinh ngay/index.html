@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baiTapTet</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+    <h3>Họ và tên: Bùi Ngọc Hưng.</h3>
+
+    <container>
+    <!--Cau 7-->
+    <div class="cau7">
+        <h3>Câu 7:</h3>
+        <label for="cau7Input">Ho va ten</label>
+        <input type="text" id="cau7Input" class="cau7Input">
+        <button onclick="print()">OK</button>
+        <h1 id="fullNameOutput"></h1>
+    </div>
+    <!--Cau 7 Ket Thuc-->
+
+    <!--Cau 8-->
+    <div class="cau8">
+        <h3>Câu 8:</h3>
+        <label for="cau8Input">Square root:</label>
+        <input type="number" id="cau8Input"> 
+        <button onclick="squareRoot()">OK</button>
+        <h1 id="cau8Output"></h1>
+    </div>
+    <!--Cau 8 Ket Thuc-->
+
+    <!--Cau 9 giong cau 7-->
+
+    <!--Cau 10-->
+    <form>
+    <div class="cau10">
+        <h3>Câu 10:</h3>
+        <label for="cau10Input">Link anh:</label>
+        <input type="url" id="cau10Input">
+        <button type="button" onclick="printPhoto()">OK</button>
+        <h1 id="cau10OutputLink" href="#"></h1>
+        <img src="#" id="cau10OutputPhoto" alt="Output Image">
+    </div>
+    </form>
+    <!--Cau 10 ket thuc-->
+
+    <!--Cau 11-->
+    <div class="cau11">
+        <h3>Câu 11:</h3>
+        <label for="side1triangle">Do dai Canh 1:</label>
+        <input type="number" id="side1triangle">
+        <label for="side2triangle">Do dai Canh 2:</label>
+        <input type="number" id="side2triangle">
+        <label for="side3triangle">Do dai Canh 3:</label>
+        <input type="number" id="side3triangle">
+        <button onclick="checkTriangle()">OK</button>
+        <h1 id="cau10Output"></h1>
+    </div>
+    <!--Cau 11 ket thuc-->
+
+    <!--Cau 12-->
+    <div class="cau12">
+    <h3>Câu 12:</h3>
+        <label for="so1">First number:</label>
+        <input type="number" id="so1">
+        <label for="so2">Second number:</label>
+        <input type="number" id="so2">
+        <button onclick="sumFromAtoB()">Calculate</button>
+        <h1 id="cau12Output"></h1>
+    </div>
+    <!--Cau 12 ket thuc-->
+
+    <!--Cau 13-->
+     <div class="cau13">
+        <h3 class="cau13Heading">Câu 13:</h3>
+        <input type="number" id="cau13NumberOne" class="cau13Input">
+        <p>*</p>
+        <p>x +</p>
+        <input type="number" id="cau13NumberTwo" class="cau13Input">
+        <p>= 0</p>
+        <button onclick="giaiPhuongTrinh()">Tìm x</button>
+        <h1 id="cau13Output"></h1>
+    </div>
+    <!--Cau 13 ket thuc-->
+
+    <!--Cau 14-->
+    <div class="cau14">
+        <h3>Câu 14:</h3>
+        <input type="number" id="cau14InputNumber">
+        <button onclick="parkingFeeCalculator()">Tinh phi</button>
+        <h1 id="cau14Output"></h1>
+    </div>
+    <!--Cau 14 ket thuc-->
+
+    <!--Cau 15-->
+    <div class="cau15">
+        <h3>Câu 15:</h3>
+        <input type="number" id="cau15InputNumber">
+        <button onclick="tinhTienDien()">Tinh tien dien</button>
+        <h1 id="cau15Output"></h1>
+    </div>
+    <!--Cau 15 ket thuc-->
+    </container>
+
+    <script>
+
+        //Cau 7
+        function print(){
+            let inputReading = document.getElementById("cau7Input").value;
+            document.getElementById('fullNameOutput').innerText = inputReading;
+        }
+        //Cau 7
+
+        //Cau 8
+        function squareRoot(){
+            let input2Reading = document.getElementById("cau8Input").value;
+            let squareRootCalculate = Math.sqrt(input2Reading);
+            document.getElementById("cau8Output").innerText = squareRootCalculate;
+        }
+        //Cau 8
+
+        //Cau 9 giong cau 7
+
+        //Cau 10
+        function printPhoto(){
+            let inputLinkReading = document.getElementById("cau10Input").value;
+            let photoElement = document.getElementById("cau10OutputPhoto");
+            let linkElement = document.getElementById("cau10OutputLink");
+
+            linkElement.textContent = inputLinkReading;
+            linkElement.href = inputLinkReading;
+            photoElement.src = inputLinkReading;
+
+        }
+
+        //Cau 11
+        function checkTriangle(){
+            let triangleFirstSide = document.getElementById("side1triangle").value;
+            let triangleSecondSide = document.getElementById("side2triangle").value;
+            let triangleThirdSide = document.getElementById("side3triangle").value;
+
+            if(triangleFirstSide < 0 || triangleSecondSide < 0 || triangleThirdSide <0){
+                document.getElementById("cau10Output").innerText = "Invalid Input";
+                return false;
+            }
+
+            if(triangleFirstSide + triangleSecondSide > triangleThirdSide && triangleSecondSide + triangleThirdSide > triangleFirstSide && triangleFirstSide + triangleThirdSide > triangleSecondSide){
+                document.getElementById("cau10Output").innerText = "La Hinh Tam Giac";
+                return true;
+            } else {
+                document.getElementById("cau10Output").innerText = "Khong phai Hinh Tam Giac";
+                return false
+            }
+            
+        }
+        //Cau 11
+
+        //Cau 12
+        function sumFromAtoB(){
+            let cau12InputOne = parseInt(document.getElementById("so1").value);
+            let cau12InputTwo = parseInt(document.getElementById("so2").value);
+            let cau12Sum = 0;
+
+            if(cau12InputOne <= 0 || cau12InputTwo <=0){
+                document.getElementById("cau12Output").innerText = "Invalid Input";
+                return;
+            }
+
+            if(cau12InputOne > cau12InputTwo){
+                for(let i=cau12InputTwo; i<=cau12InputOne; i++){
+                    cau12Sum +=i;
+                }
+            } else {
+                for(let i=cau12InputOne; i<= cau12InputTwo; i++){
+                    cau12Sum+=i;
+                }
+            }
+            document.getElementById("cau12Output").innerText = cau12Sum;
+        }
+        //Cau 12 
+
+        //Cau 13
+        function giaiPhuongTrinh(){
+            let cau13InputOne= parseInt(document.getElementById("cau13NumberOne").value);
+            let cau13InputTwo= parseInt(document.getElementById("cau13NumberTwo").value);
+            let cau13FindX = 0;
+
+            cau13FindX = (-1*cau13InputTwo)/cau13InputOne;
+            document.getElementById("cau13Output").innerText = "x =" + cau13FindX;
+
+        }
+        //Cau 13
+
+        //Cau 14
+        function parkingFeeCalculator(){
+            let cau14Input= parseInt(document.getElementById("cau14InputNumber").value);
+            let cau14Fee = 0;
+            
+            //duoi 2h moi gio bang 2000VND
+            if(cau14Input <= 2){
+                cau14Fee = cau14Input * 2000;
+            //tu 2h den 6h, moi gio bang 4000VND
+            }else if(cau14Input<=6){
+                cau14Fee = 2 * 2000 + (cau14Input - 2) * 4000;
+            //tren 6h, moi gio bang 6000VND
+            }else if(cau14Input>6){
+                cau14Fee = 2 * 2000 + 4 * 4000 + (cau14Input - 6) * 6000;
+            }
+            document.getElementById("cau14Output").innerText = "Tong phi do xe = " + cau14Fee + "VND";
+        }
+        //Cau 14
+
+        //Cau 15
+            function tinhTienDien(){
+            let cau15Input= parseInt(document.getElementById("cau15InputNumber").value);
+            let cau15Fee = 0;
+            
+            //fee cho so dien <= 99
+            if(cau15Input <= 99){
+                cau15Fee = cau15Input * 1800;
+            //cho so dien tu 100 > 199
+            }else if(cau15Input<=199){
+                cau15Fee =99 * 1800 + (cau15Input - 99) * 2000;
+            //cho so dien tu 200 tro di
+            }else if(cau15Input>200){
+                cau15Fee = 99 * 1800 + 100 * 2000 + (cau15Input - 199) * 2000;
+            }
+            document.getElementById("cau15Output").innerText = "Tong so tien dien la = " + cau15Fee + "VND";
+        }
+        //Cau 15
+    </script>
+
+</body>
+</html>
