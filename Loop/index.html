@@ -6,37 +6,62 @@
     <title>Loop</title>
 </head>
 <body>
-    <input type="number" id="A">
-    <input type="number" id="B">
-    <button onclick="inTuAtoiB()">Play</button>
+
     <script>
-       
-
-        //let inputA = +prompt("Nhap A");
-        //let inputB = +prompt("Nhap B");
-        //let i = inputA;
-        //while(i<=inputB){
-         //   if(i%2==0){
-         //       document.write("<h1>" + i + "</h1>");
-         //   } else{
-         //       document.write("<h2>" + i + "</h2>");
-         //   }
-         //   i++;
-       // }
-
-        
-
         let a = +prompt("Nhap A");
         let b = +prompt("Nhap B");
-        let total = 0;
-        for(let i = a; i <= b; i++){
-            for(let y = a; y<=b; y++){
-                total+= (i*y) ;
+        let total = 1;
+        for(let i=a; i<b;i++){
+            if(i%2==0){
+                total*=i;
             }
         }
-        document.write("<h1>" + total + "</h2>");
+        document.write(total + "<br>");
 
+        let c = +prompt("Nhap C");
+        let d = +prompt("Nhap D");
+        let total2 = 0;
+        for(let g=c; g<d; g++){
+            if(g>2 && g%3==0){
+                total2+=g;
+            }
+        }
+        document.write(total2 + "<br>");
 
+        let e = +prompt("Nhap E");
+        let f = +prompt("Nhap F");
+        let total3 = 0;
+        for(let x=e; x<f; x++){
+            if(x%3==0){
+                total3+=1;
+            }
+        }
+        document.write(total3 + "<br>");
+
+        let y = +prompt("Nhap Y");
+        let result="";
+        for(let i = 2; i < y; i++){
+            if(y%i==0){
+                result="khong phai so nguyen to";
+            } else {
+                result="so nguyen to";
+            }
+        }
+        document.write(result + "<br>");
+
+        let firstInput = 1;
+        let secondInput = 100;
+        for(let i = firstInput; i<= secondInput; i++){
+            if(i%3==0 && i%5==0){
+                document.write("FizzBuzz" + "<br>");
+            } else if (i%3==0){
+                document.write("Fizz"+ "<br>");
+            } else if (i%5==0){
+                document.write("Buzz"+ "<br>");
+            } else {
+                document.write(i + "<br>");
+            }
+        }
     </script>
 </body>
 </html>
